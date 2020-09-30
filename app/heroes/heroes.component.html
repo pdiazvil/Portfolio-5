@@ -1,0 +1,21 @@
+<h2>Portfolios</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.portfolioID}}</span> {{hero.style}}
+  </li>
+</ul>
+
+<div *ngIf="selectedHero">
+
+  <h2>{{selectedHero.style}} Details</h2>
+  <div><span>portfolio id: </span>{{selectedHero.portfolioID}}</div>
+  <div>
+    <label>style:
+      <input [(ngModel)]="selectedHero.style" placeholder="style"/>
+    </label>
+  </div>
+  <div><span>employee id: </span>{{selectedHero.empID}}</div>
+
+</div>
